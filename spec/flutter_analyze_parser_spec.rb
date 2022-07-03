@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FlutterAnalyzeParser do
   let(:content) { File.readlines(filename).reduce(:+) }
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FlutterViolation = Struct.new(:severity, :rule, :description, :file, :line)
 
 class FlutterAnalyzeParser
