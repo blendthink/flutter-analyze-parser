@@ -19,7 +19,7 @@ jobs:
       - name: Upload coverage report
         uses: codecov/codecov-action@v3
         with:
-          files: ./coverage/.resultset.json
+          files: ./coverage/coverage.xml
           flags: unittests
-          name: ruby-sample-for-codecov
+          name: codecov-flutter-analyze-parser
           fail_ci_if_error: true
