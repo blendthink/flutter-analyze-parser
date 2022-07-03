@@ -10,11 +10,11 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.4.1
+          ruby-version: 3.0.4
           bundler-cache: true
 
       - name: Run RSpec
-        run: bundle exec rake coverage
+        run: bundle exec rake spec
 
       - name: Upload coverage report
         uses: codecov/codecov-action@v3
