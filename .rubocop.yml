@@ -1,7 +1,7 @@
 require: rubocop-performance
 
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.4
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -10,17 +10,14 @@ Style/StringLiterals:
 Style/ClassCheck:
   EnforcedStyle: kind_of?
 
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 Lint/UselessAssignment:
   Exclude:
     - '**/spec/**/*'
 
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 
 Layout/DotPosition:
@@ -100,7 +97,7 @@ Metrics/BlockLength:
 Style/MixinGrouping:
   Enabled: false
 
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: false
 
 Style/SpecialGlobalVars:

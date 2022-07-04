@@ -1,0 +1,25 @@
+on:
+  pull_request:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.4.1
+          bundler-cache: true
+
+      - name: Run RSpec
+        run: bundle exec rake spec
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/coverage.xml
+          flags: unittests
+          name: codecov-flutter-analyze-parser
+          fail_ci_if_error: true

@@ -1,4 +1,6 @@
-FlutterViolation = Struct.new(:rule, :description, :file, :line)
+# frozen_string_literal: true
+
+FlutterViolation = Struct.new(:severity, :rule, :description, :file, :line)
 
 class FlutterAnalyzeParser
   class << self
@@ -8,7 +10,7 @@ class FlutterAnalyzeParser
       return [] if filtered_input.detect { |element| element.include? "No issues found!" }
 
       filtered_input
-        .select { |line| line.start_with? "info" }
+        .select { |line| line.start_with? /info|warning|error/ }
         .map(&method(:parse_line))
     end
 
@@ -21,10 +23,10 @@ class FlutterAnalyzeParser
     end
 
     def parse_line(line)
-      _, description, file_with_line_number, rule = line.split(" • ")
+      severity, description, file_with_line_number, rule = line.split(" • ")
       file, line = file_with_line_number.split(":")
 
-      FlutterViolation.new(rule, description, file, line.to_i)
+      FlutterViolation.new(severity, rule, description, file, line.to_i)
     end
   end
 end
