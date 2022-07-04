@@ -104,8 +104,7 @@ DEPENDENCIES
   rspec (~> 3.11)
   rubocop (~> 0.93)
   rubocop-performance (~> 1.10)
-  simplecov
-  simplecov-cobertura
+  simplecov-cobertura (~> 2.1)
 
 BUNDLED WITH
    2.3.17

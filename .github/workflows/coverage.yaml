@@ -3,14 +3,14 @@ on:
 
 jobs:
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.4
+          ruby-version: 2.4.1
           bundler-cache: true
 
       - name: Run RSpec
